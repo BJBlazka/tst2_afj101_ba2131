@@ -363,7 +363,7 @@ static const struct drm_display_mode afj101_ba2131_default_mode = {
 };
 
 static int afj101_ba2131_get_modes(struct drm_panel *panel,
-				   struct drm_connector *connector)
+					struct drm_connector *connector)
 {
 	struct afj101_ba2131 *ctx = panel_to_afj101(panel);
 	struct drm_display_mode *mode;
@@ -419,7 +419,7 @@ static int afj101_ba2131_dsi_probe(struct mipi_dsi_device *dsi)
 	}
 
 	drm_panel_init(&ctx->panel, &dsi->dev, &afj101_ba2131_funcs,
-		       DRM_MODE_CONNECTOR_DSI);
+			DRM_MODE_CONNECTOR_DSI);
 
 	ret = drm_panel_of_backlight(&ctx->panel);
 	if (ret)
